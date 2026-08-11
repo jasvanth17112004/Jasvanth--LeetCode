@@ -1,11 +1,14 @@
 #this has been done by me .Jasvanth.
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        l=len(needle)
-        for i,v  in enumerate(haystack):
-            if v == needle[0]:
-                if needle== haystack[i:i+l:+1]:
-                    return i
+        if haystack==needle:
+            return 0
+        k=0
+        for i in range(len(needle),len(haystack)+1):
+            if needle!=haystack[k:i]:
+                k=k+1
+            else:
+                return k
         return -1
         
 
